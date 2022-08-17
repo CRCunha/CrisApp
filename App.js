@@ -1,20 +1,36 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-export default function App() {
+// Screens
+import Splash from './src/pages/splash';
+import Home from './src/pages/home';
+import Mark from './src/pages/mark';
+import Notify from './src/pages/notify';
+import Settings from './src/pages/settings';
+
+// https://dribbble.com/shots/18135924-Parcel-Tracking-App
+
+const App = () => {
+  const Stack = createNativeStackNavigator();
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer style={{ flex: 1 }}>
+      <StatusBar hidden={true} />
+      <Stack.Navigator
+        hidden={true}
+        screenOptions={{
+          headerShown: false,
+        }}
+      >
+        <Stack.Screen name="Splash" component={Splash} />
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Mark" component={Mark} />
+        <Stack.Screen name="Notify" component={Notify} />
+        <Stack.Screen name="Settings" component={Settings} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
