@@ -17,7 +17,7 @@ export default StyleSheet.create({
     height: height,
 
     paddingHorizontal: 25,
-    paddingBottom: 40,
+    paddingBottom: 20,
     alignItems: 'center',
     justifyContent: 'space-between',
     flexDirection: 'column',

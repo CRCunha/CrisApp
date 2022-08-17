@@ -8,8 +8,7 @@ import {
 import styles from './styles.js';
 
 const Splash = ({ navigation }) => {
-  const ImageBackgroundAsset = '../../../assets/getStarted.png';
-  const Ilustration = '../../../assets/ilustration.png';
+  const ImageBackgroundAsset = '../../../assets/header.jpg';
 
   return (
     <View style={styles.container}>
@@ -18,17 +17,9 @@ const Splash = ({ navigation }) => {
         resizeMode="cover"
         style={styles.imageBackGround}
       >
-        <View style={styles.ilustrationContainer}>
-          <Image
-            style={styles.ilustration}
-            source={require(`${Ilustration}`)}
-          />
-        </View>
+        <View style={styles.ilustrationContainer}></View>
         <View>
-          <Text style={styles.textInfo}>
-            Send a new parcel or track the one
-            {'\n'} which your friend have sent
-          </Text>
+          <Text style={styles.textInfo}></Text>
         </View>
         <View style={styles.buttonContainer}>
           <TouchableOpacity

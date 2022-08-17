@@ -4,7 +4,7 @@ import Menu from '../../components/menu';
 import SliderHome from '../../components/sliderHome';
 
 const Settings = ({ navigation }) => {
-  const ImageBackgroundAsset = '../../../assets/header.jpg';
+  const ImageBackgroundAsset = '../../../assets/back.jpg';
   return (
     <View style={styles.container}>
       <View style={styles.contentContainer}>
