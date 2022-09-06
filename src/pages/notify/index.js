@@ -1,12 +1,28 @@
-import { View, TouchableOpacity, ImageBackground } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { View, TouchableOpacity, ImageBackground, Text } from 'react-native';
 import IconMaterial from 'react-native-vector-icons/MaterialCommunityIcons';
 import { pallet1 } from '../../../configs/colors';
 import styles from './styles.js';
+import axios from 'axios';
 
+import CardNotify from '../../components/cardNotify';
 // https://dribbble.com/shots/19058343-pics-for-InnerSense
 
 const Notify = ({ navigation }) => {
   const ImageBackgroundAsset = '../../../assets/header.jpg';
+  const [dataValues, setDataValues] = useState();
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    axios({
+      method: 'get',
+      url: `https://demo.treblle.com/api/v1/articles/voidgs`,
+    }).then((response) => {
+      setLoading(false);
+      setDataValues(response.data.article);
+    });
+  }, []);
+
   return (
     <View style={styles.container}>
       <ImageBackground
@@ -37,7 +53,12 @@ const Notify = ({ navigation }) => {
               />
             </TouchableOpacity>
           </View>
-          <View style={styles.cardNotify}></View>
+          <CardNotify
+            navigation={navigation}
+            title={dataValues?.title}
+            text={dataValues?.content}
+            loading={loading}
+          />
         </View>
       </ImageBackground>
     </View>

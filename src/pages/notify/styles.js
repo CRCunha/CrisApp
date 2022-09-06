@@ -17,7 +17,7 @@ export default StyleSheet.create({
     height: height,
 
     paddingHorizontal: 25,
-    paddingBottom: 20,
+    paddingBottom: 30,
     alignItems: 'center',
     justifyContent: 'space-between',
     flexDirection: 'column',
@@ -51,13 +51,5 @@ export default StyleSheet.create({
 
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  cardNotify: {
-    width: '100%',
-    height: 200,
-
-    backgroundColor: `${base}`,
-
-    borderRadius: 30,
   },
 });

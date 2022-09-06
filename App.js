@@ -8,8 +8,7 @@ import Home from './src/pages/home';
 import Mark from './src/pages/mark';
 import Notify from './src/pages/notify';
 import Settings from './src/pages/settings';
-
-// https://dribbble.com/shots/18135924-Parcel-Tracking-App
+import Login from './src/pages/login';
 
 const App = () => {
   const Stack = createNativeStackNavigator();
@@ -23,6 +22,7 @@ const App = () => {
           headerShown: false,
         }}
       >
+        <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Splash" component={Splash} />
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Mark" component={Mark} />

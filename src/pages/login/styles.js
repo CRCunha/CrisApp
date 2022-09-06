@@ -1,5 +1,11 @@
 import { StyleSheet, Dimensions } from 'react-native';
-import { base, fontLightGreen, pallet1 } from '../../../configs/colors';
+import {
+  base,
+  fontLightGreen,
+  pallet1,
+  fontMediun,
+  pallet3,
+} from '../../../configs/colors';
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
 
@@ -19,7 +25,21 @@ export default StyleSheet.create({
 
     alignItems: 'center',
   },
+  logo: {
+    width: 100,
+    height: 100,
+    borderRadius: 20,
+  },
   ilustrationContainer: {
+    height: '40%',
+    width: '100%',
+
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+  },
+  content: {
     height: '55%',
     width: '100%',
 
@@ -33,15 +53,29 @@ export default StyleSheet.create({
     height: '92%',
   },
   textInfo: {
-    marginTop: 35,
-    padding: 15,
-    color: `${fontLightGreen}`,
-    fontSize: 20,
+    color: `${fontMediun}`,
+    fontSize: 12,
+    marginTop: 10,
+    //letterSpacing: 1,
+  },
+  signup: {
+    color: `${pallet3}`,
+    marginTop: 10,
+    fontSize: 13,
+    fontWeight: 'bold',
+    //letterSpacing: 1,
+  },
+  textLogin: {
+    marginTop: 60,
+
+    color: `${pallet3}`,
+    fontSize: 35,
+    fontWeight: 'bold',
     textAlign: 'center',
     //letterSpacing: 1,
   },
   buttonContainer: {
-    marginTop: '15%',
+    marginTop: '5%',
     padding: 15,
     width: '90%',
     height: 100,
@@ -50,14 +84,14 @@ export default StyleSheet.create({
     alignItems: 'center',
   },
   button: {
-    width: '100%',
+    width: '95%',
     height: 50,
     padding: 12,
     borderRadius: 25,
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: `${base}`,
+    backgroundColor: `${pallet3}`,
 
     shadowColor: '#000',
     shadowOffset: {
@@ -70,7 +104,27 @@ export default StyleSheet.create({
     elevation: 1,
   },
   buttonText: {
-    color: `${pallet1}`,
+    fontSize: 16,
+    color: `${base}`,
     fontWeight: '500',
+  },
+  headerInfos: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  textInfos: {
+    width: '80%',
+    marginTop: 35,
+  },
+  inputs: {
+    marginTop: 40,
+    width: '80%',
+    minHeight: 100,
+  },
+  inputText: {
+    backgroundColor: 'transparent',
+    marginTop: 10,
+    color: `${pallet3}`,
+    borderColor: `${pallet3}`,
   },
 });

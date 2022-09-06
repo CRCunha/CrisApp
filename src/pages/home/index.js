@@ -6,7 +6,7 @@ import IconMaterial from 'react-native-vector-icons/MaterialCommunityIcons';
 import { pallet1 } from '../../../configs/colors';
 
 const Home = ({ navigation }) => {
-  const ImageBackgroundAsset = '../../../assets/back.jpg';
+  const ImageBackgroundAsset = '../../../assets/header.jpg';
   const ImageAvatar = '../../../assets/avatar/avatar2.png';
   return (
     <View style={styles.container}>
