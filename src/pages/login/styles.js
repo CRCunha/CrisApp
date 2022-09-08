@@ -1,11 +1,5 @@
 import { StyleSheet, Dimensions } from 'react-native';
-import {
-  base,
-  fontLightGreen,
-  pallet1,
-  fontMediun,
-  pallet3,
-} from '../../../configs/colors';
+import { base, fontMediun, pallet3 } from '../../../configs/colors';
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
 
@@ -66,7 +60,8 @@ export default StyleSheet.create({
     //letterSpacing: 1,
   },
   textLogin: {
-    marginTop: 60,
+    marginTop: 50,
+    marginBottom: 20,
 
     color: `${pallet3}`,
     fontSize: 35,
