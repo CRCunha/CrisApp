@@ -7,55 +7,61 @@ export default StyleSheet.create({
   container: {
     width: width,
     height: height,
-    backgroundColor: `${base}`,
-  },
-  contentContainer: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: height - 80,
-  },
-  menuContainer: {
-    height: 70,
-    width: '100%',
-    borderTopColor: '#F8F8F8',
-    borderTopWidth: 1,
-
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  header: {
-    width: '100%',
-    height: '45%',
-
-    borderBottomLeftRadius: 50,
-    borderBottomRightRadius: 50,
   },
   headerBackground: {
     width: '100%',
     height: '100%',
-
     alignItems: 'center',
+    justifyContent: 'center',
   },
-  content: {
-    width: '100%',
-    height: '55%',
-  },
-  contentTexts: {
-    width: '100%',
-    height: '22%',
-    paddingHorizontal: 20,
+  contentHeader: {
+    width: width,
+    height: 105,
 
+    paddingHorizontal: 25,
+    paddingBottom: 30,
+    alignItems: 'center',
     justifyContent: 'space-between',
+    flexDirection: 'column',
+  },
+  headerInfos: {
+    width: '100%',
+    height: 105,
+
     alignItems: 'flex-end',
+    justifyContent: 'space-between',
     flexDirection: 'row',
   },
-  services: {
-    fontSize: 26,
-    fontWeight: '500',
-    color: `${fontDark}`,
+  buttonContainer: {
+    width: 45,
+    height: 45,
+
+    backgroundColor: `${base}`,
+
+    borderRadius: 100,
+
+    alignItems: 'center',
+    justifyContent: 'center',
   },
-  seeAll: {
-    color: `${fontLight}`,
+  buttonSettingsContainer: {
+    width: 29,
+    height: 45,
+
+    backgroundColor: `${base}`,
+
+    borderRadius: 100,
+
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  content: {
+    marginTop: 40,
+    width: width - 20,
+    minHeight: height - 105,
+    marginBottom: -10,
+
+    backgroundColor: `${base}`,
+    borderTopLeftRadius: 30,
+    borderTopRightRadius: 30,
   },
 });

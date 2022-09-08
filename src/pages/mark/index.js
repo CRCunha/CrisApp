@@ -1,35 +1,56 @@
-import { View, Text, ImageBackground } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import {
+  View,
+  ScrollView,
+  TouchableOpacity,
+  ImageBackground,
+  Text,
+} from 'react-native';
+import IconMaterial from 'react-native-vector-icons/MaterialCommunityIcons';
+import { pallet1 } from '../../../configs/colors';
 import styles from './styles.js';
-import Menu from '../../components/menu';
-import SliderHome from '../../components/sliderHome';
+import axios from 'axios';
+
+//https://cdn.dribbble.com/userupload/3370921/file/original-7bbab46e74fe1e1fd86342f2c4e85916.png?compress=1&resize=1024x768&vertical=center
 
 const Mark = ({ navigation }) => {
-  const ImageBackgroundAsset = '../../../assets/back.jpg';
+  const ImageBackgroundAsset = '../../../assets/mark.png';
+  const [dataValues, setDataValues] = useState();
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    axios({
+      method: 'get',
+      url: `https://demo.treblle.com/api/v1/articles/voidgs`,
+    }).then((response) => {
+      setLoading(false);
+      setDataValues(response.data.article);
+    });
+  }, []);
+
   return (
     <View style={styles.container}>
-      <View style={styles.contentContainer}>
-        <View style={styles.header}>
-          <ImageBackground
-            source={require(`${ImageBackgroundAsset}`)}
-            resizeMode="cover"
-            style={styles.headerBackground}
-            imageStyle={{
-              borderBottomLeftRadius: 50,
-              borderBottomRightRadius: 50,
-            }}
-          ></ImageBackground>
-        </View>
-        <View style={styles.content}>
-          <View style={styles.contentTexts}>
-            <Text style={styles.services}>My service</Text>
-            <Text style={styles.seeAll}>See all</Text>
+      <ImageBackground
+        source={require(`${ImageBackgroundAsset}`)}
+        resizeMode="cover"
+        style={styles.headerBackground}
+      >
+        <View style={styles.contentHeader}>
+          <View style={styles.headerInfos}>
+            <TouchableOpacity
+              onPress={() => navigation.goBack()}
+              style={styles.buttonContainer}
+            >
+              <IconMaterial
+                name="chevron-left"
+                size={30}
+                color={`${pallet1}`}
+              />
+            </TouchableOpacity>
           </View>
-          <SliderHome />
         </View>
-      </View>
-      <View style={styles.menuContainer}>
-        <Menu navigation={navigation} />
-      </View>
+        <ScrollView style={styles.content}></ScrollView>
+      </ImageBackground>
     </View>
   );
 };
